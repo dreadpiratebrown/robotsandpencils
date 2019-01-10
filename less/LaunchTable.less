@@ -1,0 +1,110 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width: 100%;
+}
+
+thead {
+    background: linear-gradient(to bottom, #9db7cd 0%,#ffffff 77%);
+    box-shadow: 1px 1.732px 10px 0px rgba(0, 0, 0, .37);
+    transform: translateY(-12px);
+}
+
+th {
+    color: #043d67;
+    font-size: 1.0625rem;
+    padding: 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+tbody {
+    transform: translateY(-12px);
+
+    td {
+        background-color: rgba(255, 255, 255, 0.851);
+        border-top: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
+        color: #444444;
+        padding: 1rem;
+
+        &:first-child {
+            border-left: 1px solid #ffffff;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            text-align: center;
+
+            img {
+                max-width: 1.875rem;
+            }
+        }
+
+        &:last-child {
+            border-right: 1px solid #ffffff;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+
+            img {
+                max-width: 1.25rem;
+            }
+        }
+
+        &.details {
+            max-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 38%;
+        }
+    }
+      
+}
+
+@media screen and (max-width: 768px) {
+    table, tbody, tbody tr, td {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        margin-top: 12px;
+    }
+
+    tbody td {
+        border-top: none;
+        border-left: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+
+        &:first-child {
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 8px;
+            text-align: left;
+        }
+
+        &:last-child {
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 8px;
+        }
+
+        &::before {
+            color: #043d67;
+            content: attr(data-title);
+            display: inline-block;
+            padding-right: 1rem;
+            text-align: right;
+            width: 6rem;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        &.details {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
